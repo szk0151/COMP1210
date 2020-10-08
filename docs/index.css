@@ -74,6 +74,11 @@ a:hover {
     max-width: 25vh;
 }
 
+.codingbat {
+    background-color: lightgray;
+    color: lightgray;
+}
+
 hr {
     height: 1px;
     border: 0;
