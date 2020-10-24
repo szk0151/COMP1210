@@ -149,9 +149,8 @@ public class DodecahedronList2 {
          dodObjList[arrSize] = dodObj;
          arrSize++;
       }
-      
-      DodecahedronList2 dodList = new DodecahedronList2(dodObjListName,
-                                                          dodObjList, arrSize);
+
+      DodecahedronList2 dodList = new DodecahedronList2(dodObjListName, dodObjList, arrSize);
       return dodList;
    }
 
