@@ -1,0 +1,44 @@
+#include<iostream> //for cout and cin
+using namespace std;
+
+int main()
+{
+	char str[100]; //declared char array of size 100 named str.
+	cout << "Enter a sentence of up to 100 characters:";
+	cin.getline(str, 100); //takes the input char's into str
+	int len = 0, i = 0; //len to store the length of str
+	bool caps = false; //to know whether the first letter is capitalized or not.
+	while (str[len] != '\0') //loops until it encounter '\0'
+		len++;
+
+	if ((int)str[i] >= 65 && (int)str[i] <= 90)
+		caps = true; //capitalized already
+	else if ((int)str[i] >= 97 && (int)str[i] <= 122)
+	{
+		str[i] = str[i] ^ 32; //capitalizes if not capital letter
+		caps = true; //changes value to true
+	}
+
+	for (i = 1; i < len; i++)
+	{
+		if (str[i - 1] == ' ' && str[i] == ' ')
+		{ //if extra spaces present, removes them
+			for (int j = i; j < len; j++)
+				str[j] = str[j + 1];
+			len--;
+			i--;
+		}
+		else if ((int)str[i] >= 65 && (int)str[i] <= 90)
+		{// if letter is capitalized then changes to lowercase
+			str[i] = str[i] ^ 32;
+		}
+		else if (!caps) //if first letter is not capitalized
+		{
+			str[i] = str[i] ^ 32;
+			caps = true;
+		}
+	}
+	str[i] = '\0';
+	cout << str; //prints the str
+	return 0;
+}
